@@ -282,7 +282,7 @@ class Dolibarr extends AbstractBackend implements SyncSupport
         if (! empty($obj->photo) || ! empty($obj->logo)) {
             $photofile = $conf->societe->dir_output . "/contact/" . $obj->rowid . "/photos/" . $obj->photo;
             if (! file_exists($photofile) && ! empty($obj->logo)) {
-                $photofile = $conf->societe->dir_output . '/' . $obj->soc_id . '/logos/' . getImageFileNameForSize($obj->logo); //, '_mini' getImageFileNameForSize include the thumbs
+                $photofile = $conf->societe->dir_output . '/' . $obj->soc_id . '/logos/' . getImageFileNameForSize($obj->logo,''); //, '_mini' getImageFileNameForSize include the thumbs
             }
             
             if (file_exists($photofile)) {
